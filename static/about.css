@@ -1,0 +1,186 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    body {
+        background: #09575A !important;
+    }
+
+    .about-upper {
+        background-color: rgba(8, 87, 90, 0.75);
+        bottom: 0;
+        padding: 15px 15px 14px 15px;
+        width: 100%;
+    }
+
+    .about-upper p {
+        color: #EBBA6B;
+        margin: 0;
+        text-align: center;
+        text-shadow: 0px 0px 5px black;
+    }
+
+    .about-bottom {
+        padding: 30px;
+        background-color: #09575A;
+    }
+
+    .about-title {
+        font-size: 28px;
+        margin: 0 0 10px 0;
+    }
+
+    .about-mission {
+        margin: 0 0 30px 0;
+    }
+
+    .about-contact {
+        margin: 0 0 20px 0;
+    }
+
+    .about-form {
+        padding: 11px 16px 6px 16px;
+        width: 100%;
+    }
+
+    .about-email {
+        margin: 15px 0;
+    }
+
+    .about-message {
+        height: 150px;
+        min-height: 150px;
+    }
+
+    .about-btn {
+        border-radius: 5px;
+        margin: 30px 0 45px 0;
+        padding: 11px 16px 6px 16px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .about-content {
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .about-upper {
+        top: 0;
+    }
+    
+    .about-bottom {
+        background-color: rgba(8, 87, 90, 0.75);
+        bottom: 0;
+        display: flex;
+        gap: 30px;
+        margin-right: 15px;
+        position: absolute;
+        padding: 30px;
+    }
+
+    .about-upper {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .about-motto {
+        color: #EBB346;
+        font-family: 'Passion One', sans-serif !important;
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+        text-shadow: 0px 0px 5px black;
+        text-transform: uppercase;
+    }
+
+    .about-title {
+        margin: 0;
+    }
+
+    .about-mission,
+    .about-contact {
+        margin: 3px 0 15px 0;
+    }
+
+    .mission,
+    .contact {
+        width: 50%;
+    }
+
+    .about-form {
+        padding: 19px 32px 14px 32px;
+    }
+
+    .about-inputs {
+        display: flex;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .about-inputs input {
+        width: 100%;
+    }
+
+    .about-message {
+        height: 57px;
+        width: 100%;
+        min-height: 57px;
+        max-height: 450px;
+        margin: 15px 0;
+    }
+
+    .about-btn {
+        display: block;
+        border-radius: 10px;
+        margin: 0 0 0 auto;
+        padding: 19px 32px 14px 32px;
+    }
+}
+
+.nav {
+    z-index: 1;
+}
+
+.content-container {
+    height: auto !important;
+}
+
+.about-top {
+    position: relative;
+}
+
+.about-upper {
+    position: absolute;
+}
+
+.about-bottom {
+    color: white;
+}
+
+.about-title {
+    font-weight: bold;
+}
+
+.about-pic {
+    display: block;
+    width: 100%;
+}
+
+.about-form {
+    border: none;
+    border-radius: 5px;
+}
+
+.about-btn {
+    border: 1px white solid;
+    background-color: #EBB346;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.about-btn:hover {
+    background-color: #BC9240;
+}

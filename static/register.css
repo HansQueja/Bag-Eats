@@ -1,0 +1,177 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    .register-mobile {
+        display: flex;
+
+        .content-container{
+            height: 105vh;
+        }
+    }
+
+    .register-desktop {
+        display: none;
+    }
+
+    .reg-head{
+        color: white;
+    }
+
+    .register-logo
+    {
+        .reg-logo{
+            height: 50px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .reg-input{
+        color: white;
+    }
+
+    .content{
+        display: grid;
+        grid-template-rows: 1fr auto;
+        padding: 80px;
+    }
+
+    .reg-confirm{
+        color: white;
+        background-color: #EBB346;
+        border: 1px white solid;
+        border-radius: 5px;
+        margin: 38px 0;
+        padding: 8px 16px;
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        bottom: 50px;
+    }
+
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .register-mobile {
+        display: none;
+    }
+
+    .register-desktop {
+        display: flex;
+    }
+
+
+    .register-logo
+    {
+        .reg-logo{
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+    }
+
+    .reg-head{
+        color: #09575A;
+        font-size: 2rem;
+        margin-left: 30px;
+    }
+
+    .input-area {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 300px 100px;
+
+
+        .reg-input{
+            border-color: #09575A;
+            width: 85%;
+            height: 15%;
+            position: relative;
+            left: 10%;
+        }
+        .reg-label{
+            color: #786382;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            left: 10%;
+        }
+
+        .left-area{
+            grid-column: 1;
+        }
+
+        .right-area{
+            grid-column: 2;
+            align-self: center;
+        }
+    }
+
+    .reg-form{
+        background-color: white;
+        border: 10px white solid;
+        border-radius: 5px;
+        
+        margin: 5px;
+        padding: 8px 16px;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .reg-confirm{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        background-color: #13BAC0;
+        border: 1px white solid;
+        border-radius: 5px;
+        margin: 38px 0;
+        padding: 8px 16px;
+        width: 40%;
+        height: 50%;
+
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+.reg-head{
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.reg-label{
+    color: #EBB346;
+    display: block;
+    padding: 1px;
+}
+
+.reg-input{
+    background-color: transparent;
+    border: 3px white solid;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 8px 16px;
+    width: 100%;
+
+}
+
+.input-area {
+    width: 100%;
+}
+
+.div-height{
+    position: relative;
+    width: 45%;
+}
+
+.div-weight{
+    width: 45%;
+    position: relative;
+    left: 55%;
+    bottom: 76px
+}

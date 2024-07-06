@@ -1,0 +1,224 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    body {
+        background: #0E878C !important;
+    }
+    
+    .bg-color {
+        background-color: #0E878C;
+    }
+
+    .content-gradient-bg {
+        background: linear-gradient(to top, #042526, #0E878C);
+    }
+
+    .content{
+        padding: 50px;
+    }
+
+    .combo-head{
+        text-align: center;
+        font-weight: bold;
+        color: #EBBA6B;
+        padding-bottom: 20px;
+    }
+
+    .desktop{
+        display: none;
+    }
+
+    .combo-form{
+        display: grid;
+        grid-template-rows: 1fr auto;
+        max-width: 496px;
+        margin: 0 auto;
+        padding: 5px;
+
+        .combo-subhead{
+            color: white;
+            padding-top: 20px;
+        }
+
+        .combo-info{
+            border-color: transparent;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            margin-bottom: 10px;
+
+            .combo-image{
+                color: white;
+                background-color: #EBB346;
+                border-color: transparent;
+                grid-column: 1;
+                grid-row: 1 / 4;
+                justify-self: center;
+                align-self: center;
+                height: 80%;
+                width: 90%;
+            }
+
+            .food-name{
+                color: #09575A;
+                grid-column: 2;
+                font-weight: bold;
+                padding-top: 5px;
+                font-size: 14px;
+            }
+
+            .food-price{
+                color: #09575A;
+                grid-column: 2;
+                font-size: 14px;
+            }
+
+            .combo-desc{
+                color: #09575A;
+                grid-column: 2;
+                font-weight: bold;
+                font-size: 14px;
+                
+                &:hover
+                {
+                    color: #13BAC0;
+                }
+            }
+        }
+
+        .total{
+            margin-top: 20px;
+            justify-self: center;
+            color: #EBBA6B;
+        }
+
+        .combo-cancel{
+            border-color: transparent;
+            background-color: #EBB346;
+            color: white;
+            width: 40%;
+            justify-self: center;
+            margin-top: 10px;
+            padding-top: 7px;
+        }
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .bg-color {
+        background-color: #09575A;
+    }
+
+    .content-gradient-bg {
+        background: linear-gradient(#09575A, #13BAC0);
+    }
+
+    .content{
+        padding: 50px;
+    }
+
+    /* .content-container{
+        height: auto !important;
+    } */
+
+    .combo-head{
+        text-align: center;
+        font-weight: bold;
+        color: #EBBA6B;
+        padding-bottom: 20px;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .combo-form{
+        display: grid;
+        grid-template-rows: 1fr auto;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 5px;
+
+        .combo-subhead{
+            color: white;
+            padding-top: 20px;
+        }
+
+        .combo-info{
+            border-color: transparent;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 150px 1fr 300px;
+            grid-template-rows: 20px 1fr 20px;
+            margin-bottom: 10px;
+
+            .combo-image{
+                color: white;
+                background-color: #664343;
+                border-color: transparent;
+                grid-column: 1;
+                grid-row: 1 / 4;
+                justify-self: center;
+                align-self: center;
+                height: 80%;
+                width: 90%;
+                font-size: 20px;
+            }
+
+            .food-name{
+                color: #09575A;
+                grid-column: 2;
+                grid-row: 2;
+                font-weight: bold;
+                padding-top: 5px;
+                font-size: 20px;
+            }
+
+            .food-price{
+                color: #09575A;
+                grid-column: 3;
+                grid-row: 2;
+                font-size: 20px;
+                justify-self: left;
+                padding-top: 5px;
+            }
+
+            .combo-desc{
+                color: #09575A;
+                grid-column: 3;
+                grid-row: 2;
+                font-weight: bold;
+                font-size: 20px;
+                justify-self: center;
+                padding-top: 5px;
+                
+                &:hover
+                {
+                    color: #13BAC0;
+                }
+            }
+        }
+
+        .total{
+            color: #EBBA6B;
+            grid-row: 6;
+            grid-column: 1;
+            justify-self: center;
+            margin-left: 350px;
+        }
+
+        .combo-cancel{
+            border-color: transparent;
+            background-color: #EBB346;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            width: 20%;
+            margin-top: 10px;
+            padding-top: 7px;
+            border-radius: 10px;
+            grid-row: 6;
+            grid-column: 1;
+            justify-self: right;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    .login-mobile {
+        display: flex;
+    }
+
+    .login-desktop {
+        display: none;
+    }
+    
+    .content {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        padding: 50px;
+    }
+
+    .logo {
+        height: 50px;
+        margin: auto;
+    }
+
+    .login-label,
+    .login-input,
+    .login-link {
+        color: white;
+    }
+
+    .login-input {
+        background-color: transparent;
+        border: 1px white solid;
+        border-radius: 5px;
+        margin-top: 5px;
+        padding: 8px 16px;
+    }
+
+    .login-submit {
+        border: 1px white solid;
+        border-radius: 5px;
+        margin: 38px 0;
+        padding: 8px 16px;
+    }
+
+    .label-password {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .login-mobile {
+        display: none;
+    }
+
+    .login-desktop {
+        display: flex;
+    }
+
+    .logo {
+        height: 50px;
+        margin: auto;
+    }
+
+    .phone-img {
+        display: block;
+        height: 460px;
+        margin: 40px auto;
+        object-fit: cover;
+        object-position: 100% 0%;
+        width: 82%;
+    }
+
+    .login-input {
+        border: 2px #09575A solid;
+        border-radius: 5px;
+        padding: 10px 18px;
+    }
+
+    .login-submit {
+        border: none;
+        border-radius: 5px;
+        margin: 15px 0 30px 0;
+        padding: 12px;
+    }
+
+    .login-link a:hover,
+    .forgot-pass:hover {
+        color: #09575A;
+    }
+}
+
+.login-base {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    height: 530px;
+    inset: 0;
+    margin: auto;
+    padding: 15px;
+    position: fixed;
+    width: 800px;
+}
+
+.base-left {
+    background-color: #09575A;
+    border-radius: 5px;
+    height: 500px;
+}
+
+.base-right {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    padding: 0 35px 35px 35px;
+}
+
+.form {
+    width: 100%;
+}
+
+.login-label {
+    display: block;
+}
+
+.login-input {
+    width: 100%;
+}
+
+.login-submit {
+    background: linear-gradient(to right, #09575A, #13BAC0);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+.login-link {
+    text-align: center;
+}
+
+.login-link,
+.forgot-pass {
+    font-size: 12px;
+}
+
+.login-link a,
+.forgot-pass {
+    color: #13BAC0;
+    font-size: 12px;
+}

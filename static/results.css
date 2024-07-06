@@ -1,0 +1,151 @@
+@media (max-width: 991px) { /* Mobile Navigation */
+    /*body {
+        background: #0E878C !important;
+    }*/
+    
+    .bg-color {
+        background: linear-gradient(to right, #09575A, #13BAC0);
+    }
+
+    /*.content-gradient-bg {
+        background: linear-gradient(to top, #042526, #0E878C);
+    }*/
+    
+    .content-container {
+        height: auto !important;
+    }
+
+    .content{
+        padding: 20px;
+    }
+
+    .results-head{
+        font-weight: bold;
+    }
+
+    .results-sort{
+        display: none;
+    }
+
+    .results-filter{
+        display: none;
+    }
+
+    .results-combo{
+        margin: 20px 0;
+        padding: 10px;
+        border: 2px solid #EBBA6B;
+        /*box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);*/
+        display: grid;
+        grid-template-columns: 1fr 10px 150px;
+
+        .combo-price{
+            justify-self: center;
+            grid-row: 1;
+            grid-column: 3;
+        }
+
+        .combo-link{
+            justify-self: right;
+            color: #09575A;
+            grid-row: 1;
+            grid-column: 3;
+
+            &:hover
+            {
+                color: #13BAC0;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .bg-color {
+        background: linear-gradient(to right, #09575A, #13BAC0);
+    }
+
+    /*.content-gradient-bg {
+        background: linear-gradient(#09575A, #13BAC0);
+    }*/
+
+    .content-container {
+        height: auto !important;
+    }
+
+    .content{
+        padding: 80px;
+    }
+    
+    .results-header{
+        display: grid;
+        grid-template-columns: 1fr 150px;
+
+        .results-head{
+            grid-column: 1;
+            grid-row: 1;
+            font-weight: bold;
+        }
+
+        .results-sort{
+            border-color: transparent;
+            background-color: transparent;
+            font-weight: bold;
+            font-size: 20px;
+            color: #09575A;
+            grid-row: 1;
+
+            &:hover
+            {
+                color: #13BAC0;
+            }
+        }
+
+        .results-filter{
+            border-color: transparent;
+            background-color: transparent;
+            font-weight: bold;
+            font-size: 20px;
+            color: #09575A;
+            grid-row: 1;
+
+            &:hover
+            {
+                color: #13BAC0;
+            }
+        }
+    }
+
+    .results-combo{
+        margin: 20px 0;
+        padding: 10px;
+        border: 2px solid #EBBA6B;
+        /*box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);*/
+        display: grid;
+        grid-template-columns: 1fr 10px 150px;
+
+        .combo-name{
+            font-size: 20px;
+        }
+
+        .combo-price{
+            font-size: 20px;
+            justify-self: center;
+            grid-row: 1;
+            grid-column: 3;
+        }
+
+        .combo-link{
+            font-size: 20px;
+            justify-self: right;
+            color: #09575A;
+            grid-row: 1;
+            grid-column: 3;
+
+            &:hover
+            {
+                color: #13BAC0;
+            }
+        }
+    }
+    
+}

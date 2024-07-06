@@ -1,0 +1,123 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    body {
+        background: #09575A;
+    }
+
+    .content-container {
+        margin-top: 84px;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    body {
+        background: #09575A !important;
+    }
+    
+    .content-container {
+        margin-top: 90px;
+    }
+    
+}
+
+/* Global Setup */
+.content-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-white-bg {
+    background: white;
+}
+
+.content-gradient {
+    background: linear-gradient(#09575A, #13BAC0);
+}
+
+.content-gradient-top {
+    background: linear-gradient(to top, #042526, #0E878C);
+}
+
+.content {
+    max-width: 1440px;
+    width: 100%;
+}
+
+/* Fonts */
+.desc-subhead,
+.desc-ingredients,
+.desc-back,
+.combo-cancel,
+.combo-desc,
+.combo-image,
+.food-price,
+.food-name,
+.combo-subhead,
+.combo-head,
+.results-head,
+.results-sort,
+.results-filter,
+.combo-name,
+.combo-price,
+.combo-link,
+.nav-name,
+.home-description,
+.home-btn,
+.about-motto,
+.about-mission,
+.about-contact,
+.about-form,
+.about-btn,
+.info-motto,
+.info-header,
+.info-body,
+.form-label,
+.form-input,
+.label-radio,
+.label-checkbox,
+.form-btn {
+    font-family: 'Manjari', sans-serif;
+}
+
+.pro-head,
+.pro-update,
+.pro-close,
+.pro-input,
+.pro-label,
+.reg-confirm,
+.reg-label,
+.reg-input,
+.login-label,
+.login-input,
+.login-submit,
+.forgot-pass,
+.login-link {
+    font-family: 'Arimo', 'sans-serif';
+}
+
+.home-title,
+.info-title {
+    font-family: 'Radley', 'sans-serif';
+}
+
+.about-title {
+    font-family: 'Passion One', sans-serif;
+}
+
+/* Transitions */
+.nav-links,
+.nav-links:hover,
+.login-link a,
+.login-link a:hover,
+.home-btn,
+.home-btn:hover,
+.about-btn,
+.about-btn:hover,
+.forgot-pass,
+.forgot-pass:hover,
+.form-btn,
+.form-btn:hover {
+    transition: all 0.3s ease;
+}

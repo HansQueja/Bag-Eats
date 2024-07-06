@@ -1,0 +1,133 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    body {
+        background: #0E878C !important;
+    }
+
+    .bg-color {
+        background-color: #0E878C;
+    }
+
+    .home-mobile {
+        display: flex;
+    }
+
+    .home-desktop {
+        display: none;
+    }
+
+    .content {
+        padding: 15px 30px 30px 30px;
+    }
+
+    .home-title {
+        font-size: 20px;
+        margin: 0 auto 30px auto;
+        width: 310px;
+        text-align: center;
+    }
+
+    .home-description {
+        text-align: justify;
+        width: 315px;
+        margin: auto;
+    }
+
+    .home-description span {
+        margin-left: 100px;
+    }
+
+    .home-button {
+        gap: 15px;
+        margin: 30px 0;
+    }
+
+    .home-btn {
+        border-radius: 5px;
+        padding: 10px 16px 5px 16px;
+    }
+
+    .homepage-pic {
+        width: 315px;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .bg-color {
+        background-color: #09575A;
+    }
+    
+    .home-mobile {
+        display: none;
+    }
+
+    .home-desktop {
+        display: flex;
+    }
+
+    .content-container {
+        height: auto !important;
+    }
+
+    .content {
+        align-items: center;
+        display: flex;
+        gap: 120px;
+        padding: 0 120px 0px 120px;
+    }
+
+    .home-title {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .home-description {
+        margin: 30px 0;
+    }
+
+    .home-button {
+        gap: 30px;
+    }
+
+    .home-btn {
+        border-radius: 10px;
+        padding: 19px 32px 14px 32px;
+    }
+
+    .homepage-pic {
+        /* height: 820px; */
+        height: 605px;
+        margin: 60px auto 0 auto;
+        object-fit: cover;
+        object-position: 100% 0%;
+        width: 40%;
+    }
+}
+
+.home-title {
+    color: white;
+}
+
+.home-description {
+    color: white;
+}
+
+.home-button {
+    align-items: center;
+    display: flex;
+}
+
+.home-btn {
+    background-color: transparent;
+    border: 2px #EBBA6B solid;
+    color: #EBBA6B;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.home-btn:hover {
+    background-color: #EBBA6B;
+    color: white;
+}

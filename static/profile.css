@@ -1,0 +1,207 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    body {
+        background: #0E878C !important;
+    }
+    
+    .bg-color {
+        background-color: #0E878C;
+    }
+
+    .content-gradient-bg {
+        background: linear-gradient(to top, #042526, #0E878C);
+    }
+
+    .content{
+        padding: 50px;
+    }
+
+    /*.content-container{
+        height: auto !important;
+    }*/
+
+    .pro-close{
+        display: none;
+    }
+
+    .pro-head{
+        font-size: 30px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    .pro-dp{
+        background-image: url(/images/no-profile.jpg);
+        background-size: 250px;
+        background-position: center;
+        height: 250px;
+        width: 250px;
+        border-radius: 100%;
+        display: block;
+        margin: 0 auto;
+    
+        .pro-icon{
+            border-radius: 100%;
+            width: 85px;
+            z-index: 4;
+            margin-left: 65%;
+            margin-top: 70%;
+        }
+    }
+
+    .pro-info{
+        display: grid;
+        grid-template-rows: 1fr auto;
+        padding: 30px;
+        max-width: 496px;
+        margin: 0 auto;
+        position: relative;
+
+        .pro-label{
+            color: white;
+            padding-top: 5px;
+            z-index: 3;
+        }
+
+        .pro-outline{
+            height: 40px;
+            width: 100%;
+            z-index: 1;
+            border: 3px solid white;
+            border-radius: 45px;
+            display: grid;
+            grid-template-columns: 50px 1fr;
+
+            .pro-input{
+                height: 100%;
+                width: 100%;
+                border-color: transparent;
+                border-radius: 45px;
+                z-index: 2;
+                justify-self: left;
+                grid-column: 2;
+            }
+        }
+    }
+
+    .pro-update{
+        display: block;
+        margin: 0 auto;
+
+        width: 200px;
+        height: 40px;
+        color: white;
+        background-color: #EBB346;
+        border-color: transparent;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .bg-color {
+        background-color: #09575A;
+    }
+
+    .content-gradient-bg {
+        background: linear-gradient(#09575A, #13BAC0);
+    }
+
+    .content-container{
+        height: auto !important;
+    }
+
+    .pro-head{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    .pro-dp{
+        background-image: url(/images/no-profile.jpg);
+        background-size: 170px;
+        background-position: center;
+        height: 170px;
+        width: 170px;
+        border-radius: 100%;
+        display: block;
+        margin: 0 auto;
+    
+        .pro-icon{
+            border-radius: 100%;
+            width: 65px;
+            z-index: 4;
+            margin-left: 65%;
+            margin-top: 70%;
+        }
+    }
+
+    .pro-info{
+        display: grid;
+        grid-template-rows: 1fr auto;
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-bottom: 20px;
+
+        .pro-label{
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            padding-top: 5px;
+            z-index: 3;
+        }
+
+        .pro-outline{
+            height: 50px;
+            width: 100%;
+            z-index: 1;
+            border: 2px solid white;
+            background-color: transparent;
+            justify-self: center;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+
+            .pro-input{
+                height: 100%;
+                width: 100%;
+                border-color: transparent;
+                border-radius: 15px;
+                z-index: 2;
+                justify-self: left;
+                grid-column: 2;
+            }
+        }
+    }
+
+    .pro-button{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 20px;
+        padding-bottom: 21px;
+
+        .pro-update{
+            width: 40%;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #EBB346;
+            border-color: transparent;
+            justify-self: left;
+            margin-left: 10px;
+        }
+
+        .pro-close{
+            width: 40%;
+            height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #EBB346;
+            border-color: transparent;
+            justify-self: right;
+            margin-right: 10px;
+        }
+    }
+    
+}

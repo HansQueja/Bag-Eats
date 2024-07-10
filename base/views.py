@@ -188,9 +188,19 @@ def form(request):
     return render(request, 'form.html')
 
 def description(request, Food_ID):
-    print("HERE DESC")
-    food = food_list[Food_ID]
-    return render(request, 'description.html', {"food": food})
+    if 'user_id' in request.session:
+        name = request.session['name']
+
+        food = food_list[Food_ID]
+        return render(request, 'description.html', {"name":name, "food":food})
+    else:
+        return redirect('login')
     
+
 def moreinfo(request):
-    return render(request, 'moreinfo.html')
+    if 'user_id' in request.session:
+        name = request.session['name']
+
+        return render(request, 'moreinfo.html', {"name":name})
+    else:
+        return redirect('login')

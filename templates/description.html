@@ -38,7 +38,7 @@
                     <a href="{% url 'profile' %}">
                         <img class="nav-profile" src="{% static 'images/no-profile.jpg' %}" alt="profile-pic">
                     </a>
-                    <p class="nav-name">First Name Last Name</p>
+                    <p class="nav-name">{{name}}</p>
                     <a class="active nav-links" href="{% url 'home' %}">Home</a>
                     <a class="nav-links" href="{% url 'about' %}">About</a>
                     <button class="nav-links" type="button">Logout</button>
@@ -55,6 +55,7 @@
                 <a class="nav-links" href="{% url 'about' %}">About</a>
                 <button class="nav-links" type="button">Logout</button>
                 <a href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
+                    <span class="profile-text nav-links">{{ name }}</span>
                     <img class="nav-profile" src="{% static 'images/no-profile.jpg' %}" alt="profile-pic">
                 </a>
             </div>
@@ -68,12 +69,12 @@
                     <img class="desc-pic" src="{% static 'images/'|add:food.URL %}" alt="food-picture">
                 </div>
                 <div>
-                    <p class="manjari desc-stall">00–Stall Name</p> <!-- 48–Triana's Eatery -->
+                    <p class="manjari desc-stall">{{ food.Stall_ID }} – {{ food.Stall_Name }}</p> <!-- 48–Triana's Eatery -->
                     <h2 class="manjari desc-name">{{ food.Food_Name }}</h2>
                     <div class="d-flex align-items-center" style="gap: 8px;">
                         <h2 class="manjari desc-price">₱ {{ food.Price }}.00</h2>
                         <div>
-                            <p class="manjari desc-calories">Buy 1 Take 1 | 000 Calories</p> 
+                            <p class="manjari desc-calories">{{ food.Serving }} | {{ food.Calories }} Calories</p> 
                         </div>
                     </div>
                     <div class="desc-ratings d-flex">
@@ -117,7 +118,7 @@
                         </div>
                     </div>
                     
-                    <a class="form-btn" href="{% url 'home' %}">BACK</a>
+                    <a class="form-btn" href="{% url 'form' %}">BACK</a>
                 </div>
             </form>
         </div>

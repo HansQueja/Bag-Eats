@@ -11,7 +11,7 @@ def calculate_meal_balance(nutrients):
             return max(0, 1 - (value - high) / high)
 
     ideal_ranges_meal = {
-        'calories': (200, 800),
+        'calories': (200, 400),
         'total_fat': (5, 30),
         'saturated_fat': (0, 10),
         'trans_fat': (0, 1),

@@ -118,7 +118,6 @@ def register(request):
         cur.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (count + 1, full_name, email, 
                                                                  age, height, weight, bmi, make_password(password1),))
         
-        print("executed")
         conn.commit()
         conn.close()
         return render(request, "login.html")

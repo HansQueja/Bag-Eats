@@ -36,7 +36,7 @@
                     {% endfor %}
                 </div>
                 {% endif %}
-                <form class="login-form" method="POST">
+                <form class="login-form" method="POST" action="{% url 'login' %}">
                     {% csrf_token %}
                     <label class="login-label" for="login-email">Email:</label>
                     <input class="login-input" type="email" name="login-email" required>
@@ -71,7 +71,7 @@
                             {% endfor %}
                         </div>
                         {% endif %}
-                        <form class="login-form" method="POST">
+                        <form class="login-form" method="POST" action="{% url 'login' %}">
                             {% csrf_token %}
                             <input class="login-input" type="email" name="login-email" placeholder="Email" required>
                             <input class="login-input" type="password" name="login-password" placeholder="Password" style="margin-top: 15px;" required>

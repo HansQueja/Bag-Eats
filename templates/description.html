@@ -63,58 +63,62 @@
     <!-- Contents -->
     <div class="content-container content-gradient-bg">
         <div class="content">
-            <!-- Code Here -->
-            <form class="desc-content">
-            <div class="desc-image">
-                <img class="desc-pic" src="{% static 'images/'|add:food.URL %}" alt="food picture">
-            </div>
-            <!-- <form class="desc-content"> -->
-                <h3 class="desc-subhead name">{{ food.Food_Name }}</h3>
-                <h3 class="desc-subhead price">Php {{ food.Price }}</h3>
-                <h3 class="desc-subhead price">Calories {{ food.Calories}}</h3>
-                <h4 class="desc-rating">Rating: {{ food.Rating }}</h4>
-                <h4 class="desc-rating">Rating: {{ food.Nutritional_Rating }}</h4>
-                <h4 class="desc-rating">Rating: {{ food.Overall_Rating }}</h4>
-                <h4>Serving Size: {{ food.Serving }}</h4>
-                <div class="desc-container">
-                    <h4 class="desc-subhead">Ingredients</h4>
-                    {% for ingredient in food.Ingredients %}
-                    <ul>
-                        <li>{{ ingredient }}</li>
-                    </ul>
-                    {% endfor %}
-                    <h4 class="desc-subhead">Health Benefits</h4>
-                    {% for benefit in food.Health_Benefits %}
-                    <ul>
-                        <li>{{ benefit }}</li>
-                    </ul>
-                    {% endfor %}
-                    <h4 class="desc-subhead">Good for People with the following diets:</h4>
-                    {% for diet in food.Dietary_Restriction %}
-                    <ul>
-                        <li>{{ diet }}</li>
-                    </ul>
-                    {% endfor %}
-                    <h4 class="desc-subhead">Good for People with the following diets:</h4>
-                    {% for diet in food.Dietary_Restriction %}
-                    <ul>
-                        <li>{{ diet }}</li>
-                    </ul>
-                    {% endfor %}
-                    <h4 class="desc-subhead">Allergen-Free from the Following:</h4>
-                    {% for allergy in food.Allergen_Avoidance %}
-                    <ul>
-                        <li>{{ allergy }}</li>
-                    </ul>
-                    {% endfor %}
-                    <h4 class="desc-subhead">Has the following Macronutrients:</h4>
-                    {% for macros in food.Macronutrients %}
-                    <ul>
-                        <li>{{ macros }}</li>
-                    </ul>
-                    {% endfor %}
+            <form class="desc-form">
+                <div class="desc-right">
+                    <img class="desc-pic" src="{% static 'images/'|add:food.URL %}" alt="food-picture">
                 </div>
-                <a class="desc-back" href="{% url 'home' %}">BACK</a>
+                <div>
+                    <p class="manjari desc-stall">00–Stall Name</p> <!-- 48–Triana's Eatery -->
+                    <h2 class="manjari desc-name">{{ food.Food_Name }}</h2>
+                    <div class="d-flex align-items-center" style="gap: 8px;">
+                        <h2 class="manjari desc-price">₱ {{ food.Price }}.00</h2>
+                        <div>
+                            <p class="manjari desc-calories">Buy 1 Take 1 | 000 Calories</p> 
+                        </div>
+                    </div>
+                    <div class="desc-ratings d-flex">
+                        <div>
+                            <h3 class="desc-rating manjari">{{ food.Rating }}</h3>
+                            <p class="desc-rates manjari">General Rating</p>
+                        </div>
+                        <div>
+                            <h3 class="desc-rating manjari">{{ food.Nutritional_Rating }}</h3>
+                            <p class="desc-rates manjari">Nutritional Rating</p>
+                        </div>
+                        <div>
+                            <h3 class="desc-rating manjari">{{ food.Overall_Rating }}</h3>
+                            <p class="desc-rates manjari">Overall Rating</p>
+                        </div>
+                    </div>
+                    <div class="desc-descriptions">
+                        <div class="desc-description">
+                            <p class="manjari desc-subhead">Ingredients</p>
+                            {% for ingredient in food.Ingredients %}
+                            <ul>
+                                <li>{{ ingredient }}</li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        <div class="desc-description">
+                            <p class="manjari desc-subhead">Health Benefits</p>
+                            {% for benefit in food.Health_Benefits %}
+                            <ul>
+                                <li>{{ benefit }}</li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        <div class="desc-description">
+                            <p class="manjari desc-subhead">Macronutrients</p>
+                            {% for macros in food.Macronutrients %}
+                            <ul>
+                                <li>{{ macros }}</li>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <a class="form-btn" href="{% url 'home' %}">BACK</a>
+                </div>
             </form>
         </div>
     </div>

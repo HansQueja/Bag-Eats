@@ -131,7 +131,7 @@ def logout(request):
 def form(request):
 
     if request.method == "POST":
-        #print(list(request.POST.items()))
+        
         max_budget = int(request.POST.get('max-budget'))
         meal_type = request.POST.get('meal-type')
         dietary_restrictions = request.POST.getlist('dietary-restrictions')
@@ -163,7 +163,6 @@ def form(request):
         id_result, calories, total_price, spare_money = knapsack(int(max_budget), filtered_id, weight, value, food_type, calories, len(filtered_id))
         drink_budget += spare_money
         total_calories += calories
-        #print(drink_budget)
 
         results_food = []
         results_drinks = []

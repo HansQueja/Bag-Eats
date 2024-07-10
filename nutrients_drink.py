@@ -11,7 +11,7 @@ def calculate_beverage_balance(nutrients):
             return max(0, 1 - (value - high) / high)
 
     ideal_ranges_beverage = {
-        'calories': (0, 150),
+        'calories': (0, 170),
         'total_fat': (0, 3),
         'saturated_fat': (0, 1),
         'trans_fat': (0, 0.5),
@@ -47,17 +47,17 @@ def calculate_beverage_balance(nutrients):
 # Example usage for a beverage
 # IF DATA IS NOT AVAILABLE, enter -1
 beverage_item = {
-    'calories': 96,
-    'total_fat': 3,
-    'saturated_fat': 1,
-    'trans_fat': -1, 
-    'sodium': 30,
-    'total_carbs': 25,
-    'sugars': 23,
-    'protein': 3,
+    'calories': 120,
+    'total_fat': 4,
+    'saturated_fat': 2.5,
+    'trans_fat': 0, 
+    'sodium': 80,
+    'total_carbs': 16,
+    'sugars': 15,
+    'protein': 5,
     'vitamin_c': -1,  
-    'calcium': 2,
-    'potassium': 21
+    'calcium': -1,
+    'potassium': -1
 }
 
 beverage_balance, beverage_completeness = calculate_beverage_balance(beverage_item)

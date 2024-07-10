@@ -16,6 +16,7 @@ CREATE TABLE users (
     height DECIMAL(3, 2) NOT NULL,
     weight DECIMAL(3, 2) NOT NULL,
     bmi DECIMAL(2, 2) NOT NULL,
+    maintaining DECIMAL(4, 2) NOT NULL,
     hash VARCHAR(128) NOT NULL
 );
 ''')

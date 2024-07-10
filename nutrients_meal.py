@@ -50,21 +50,21 @@ def calculate_meal_balance(nutrients):
 
 # Example usage
 meal_item = {
-    'calories': 240,
-    'total_fat': 4.93,
-    'saturated_fat': 1.3,
-    'trans_fat': 0,
-    'cholesterol': 41,
-    'sodium': -1,
-    'total_carbs': 0,
-    'dietary_fiber': 0.3,
-    'sugars': 0.86,
-    'protein': 11,
-    'vitamin_a': 9,
-    'vitamin_c': 0.5,
-    'calcium': 14,
-    'iron': 1.05,
-    'potassium': -1  # No data provided for potassium
+    'calories': 222,
+    'total_fat': 10,
+    'saturated_fat': 3.493,
+    'trans_fat': -1,
+    'cholesterol': 49,
+    'sodium': 412,
+    'total_carbs': 17,
+    'dietary_fiber': 2.1,
+    'sugars': 12.7,
+    'protein': 16.56,
+    'vitamin_a': 6,
+    'vitamin_c': 12,
+    'calcium': 55,
+    'iron': 1.73,
+    'potassium': 567  # No data provided for potassium
 }
 
 meal_balance, meal_completeness = calculate_meal_balance(meal_item)

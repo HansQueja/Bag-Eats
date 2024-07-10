@@ -1,0 +1,240 @@
+/* Media Query */
+@media (max-width: 991px) { /* Mobile Navigation */
+    body {
+        background: #0E878C !important;
+    }
+    
+    .bg-color {
+        background-color: #0E878C;
+    }
+
+    .content-gradient-bg {
+        background: linear-gradient(to top, #042526, #0E878C);
+    }
+
+    .content{
+        padding: 50px;
+    }
+
+    .content-container{
+        min-height: 100vh;
+        height: auto !important;
+    } 
+
+    .combo-head{
+        font-size: 28px;
+    }
+
+    .combo-subhead {
+        font-size: 20px;
+        margin: 42px 0 0 0;
+    }
+
+    .combo-info {
+        padding: 10px;
+        border-radius: 5px;
+        margin: 15px 0;
+    }
+
+    .combo-img {
+        min-height: 95px;
+        min-width: 95px;
+        height: 95px;
+        width: 95px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-right: 10px;
+        background-color: grey;
+    }
+
+    .food-name,
+    .food-calories,
+    .food-price,
+    .combo-desc {
+        margin: 0;
+    }
+
+    .combo-desc {
+        display: block;
+        text-align: right;
+        margin-right: 5px;
+    }
+
+    .combo-bottom {
+        margin-top: 42px;
+    }
+
+    .combo-bottom hr {
+        margin: 10px 0;
+        color: white;
+        height: 3px;
+    }
+
+    .combo-total {
+        text-align: center;
+        margin: 0;
+        color: white;
+    }
+
+    .form-btn {
+        border-radius: 5px;
+        display: block;
+        padding: 11px 16px 6px 16px;
+        margin-top: 42px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) { /* Desktop Navigation */
+    .bg-color {
+        background-color: #09575A;
+    }
+
+    .content-gradient-bg {
+        background: linear-gradient(#09575A, #13BAC0);
+    }
+
+    .content {
+        padding: 60px 60px 120px 60px;
+    }
+
+    .content-container {
+        min-height: 100vh;
+        height: auto !important;
+    }
+
+    .combo-head {
+        font-size: 35px;
+    }
+
+    .combo-form {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .combo-subhead {
+        font-size: 25px;
+        margin: 35px 0 0 0;
+    }
+
+    .combo-list{
+        display: flex;
+        gap: 0 30px;
+        flex-wrap: wrap;
+    }
+
+    .combo-info {
+        padding: 15px;
+        border-radius: 10px;
+        margin: 15px 0;
+        min-width: 300px;
+        width: fit-content;
+    }
+
+    .combo-img {
+        min-height: 100px;
+        min-width: 100px;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 15px;
+        background-color: grey;
+    }
+
+    .combo-right {
+        display: flex;
+    }
+
+    .food-name {
+        margin: 0 5px 0 0;
+    }
+
+    .food-calories,
+    .food-price,
+    .combo-desc {
+        margin: 0;
+    }
+
+    .combo-desc {
+        display: block;
+        text-align: right;
+        margin-right: 5px;
+    }
+
+    .combo-bottom {
+        margin: 50px 0 0 0;
+        display: flex;
+        gap: 30px;
+        justify-content: end;
+    }
+
+    .combo-bottom hr {
+        display: none;
+    }
+
+    .combo-total {
+        text-align: center;
+        margin: 0;
+        font-size: 20px;
+        /* color: #042526; */
+        color: white;
+        font-weight: bolder;
+    }
+
+    .form-btn {
+        border-radius: 10px;
+        margin: 0;
+        padding: 19px 32px 14px 32px;
+        width: fit-content;
+    }
+}
+
+.combo-subhead {
+    color: white;
+}
+
+.combo-info {
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.combo-details {
+    width: 100%;
+}
+
+.food-name {
+    font-weight: bolder;
+}
+
+.combo-desc {
+    color: #09575A;
+    font-weight: bold;
+
+    &:hover
+    {
+        color: #EBBA6B;
+    }
+}
+
+.combo-head{
+    text-align: center;
+    font-weight: bold;
+    color: #EBBA6B;
+    margin: 0;
+    padding: 0;
+}
+
+.form-btn {
+    border: 1px white solid;
+    background-color: #EBB346;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.form-btn:hover {
+    background-color: #BC9240;
+}

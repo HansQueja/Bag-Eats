@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Links -->
-    <link rel="stylesheet" href="{% static 'combination.css' %}">
+    <link rel="stylesheet" href="{% static 'combination1.css' %}">
     <link rel="stylesheet" href="{% static 'nav.css' %}">
     <link rel="stylesheet" href="{% static 'global.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -62,10 +62,53 @@
     <!-- Contents -->
     <div class="content-container content-gradient-bg">
         <div class="content">
-            <!-- Code Here -->
-            <h1 class="combo-head mobile">Recommendation<br>List</h1>
-            <h1 class="combo-head desktop">Recommendation List</h1>
+            <h1 class="manjari combo-head ">Recommendation List</h1>
             <form class="combo-form">
+            {% if foods %}
+                <h3 class="manjari combo-subhead">Food</h3>
+                <div class="combo-list">
+                    {% for food in foods %}
+                    <div class="combo-info">
+                        <img class="combo-img" src="{% static 'images/'|add:food.URL %}" alt="food-option">
+                        <div class="combo-details">
+                            <p class="manjari food-name">{{ food.Food_Name }}</p>
+                            <p class="manjari food-calories">{{ food.Calories }} Calories</p>
+                            <p class="manjari food-price">₱ {{ food.Price }}.00</p>
+                            <a class="manjari combo-desc" href="{% url 'description' food.Food_ID %}">View</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if drinks %}
+                <h3 class="manjari combo-subhead">Drink</h3>
+                <div class="combo-list">
+                    {% for drink in drinks %}
+                    <div class="combo-info">
+                        <img class="combo-img" src="" alt="food-option">
+                        <div class="combo-details">
+                            <p class="manjari food-name">{{ drink.Food_Name }}</p>
+                            <p class="manjari food-calories">{{ drink.Calories }} Calories</p>    
+                            <p class="manjari food-price">₱ {{ drink.Price }}.00</p>
+                            <a class="manjari combo-desc" href="{% url 'description' drink.Food_ID %}">View</a>
+                        </div>  
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="combo-bottom">
+                <hr>
+                <div>
+                    <p class="manjari combo-total">Total Calories: {{ total_calories }}</p>
+                    <p class="manjari combo-total">Total Price: ₱ {{ total_price }}.00</p>   
+                </div>
+                <hr>
+                <a class="manjari form-btn" href="{% url 'form' %}">BACK</a>    
+            </div>
+            
+            </form>
+
+            <!-- <form class="combo-form">
             {% if foods %}
                 <h3 class="combo-subhead">Food</h3>
                 {% for food in foods %}
@@ -93,7 +136,7 @@
             <h3 class="combo-subhead total">Total Price: Php {{ total_price }}</h3>
             <h4 class="combo-subhead calories">Total Calories: Php {{ total_calories }}</h4>
             <button class="combo-cancel" type="button">CANCEL</button>
-            </form>
+            </form> -->
         </div>
     </div>
 </body>

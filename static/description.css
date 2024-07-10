@@ -175,6 +175,7 @@
 }
 
 .desc-pic {
+    background: grey;
     border: 5px solid white;
     border-radius: 8px;
     object-fit: cover;

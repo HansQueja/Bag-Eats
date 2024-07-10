@@ -85,7 +85,7 @@
                 <div class="combo-list">
                     {% for drink in drinks %}
                     <div class="combo-info">
-                        <img class="combo-img" src="" alt="food-option">
+                        <img class="combo-img" src="{% static 'images/'|add:drink.URL %}" alt="food-option">
                         <div class="combo-details">
                             <p class="manjari food-name">{{ drink.Food_Name }}</p>
                             <p class="manjari food-calories">{{ drink.Calories }} Calories</p>    

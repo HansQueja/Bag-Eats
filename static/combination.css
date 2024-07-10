@@ -91,6 +91,12 @@
             color: #EBBA6B;
         }
 
+        .calories{
+            margin-top: 20px;
+            justify-self: center;
+            color: #EBBA6B;
+        }
+
         .combo-cancel{
             border-color: transparent;
             background-color: #EBB346;
@@ -142,6 +148,7 @@
             color: white;
             padding-top: 20px;
         }
+        
 
         .combo-info{
             border-color: transparent;
@@ -204,6 +211,12 @@
             grid-column: 1;
             justify-self: center;
             margin-left: 350px;
+        }
+
+        .calories{
+            margin-top: 20px;
+            justify-self: center;
+            color: #EBBA6B;
         }
 
         .combo-cancel{

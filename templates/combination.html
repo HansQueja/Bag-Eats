@@ -51,7 +51,7 @@
                     <a href="{% url 'home' %}">
                         <img class="nav-profile" src="{% static 'images/no-profile.jpg' %}" alt="profile-pic">
                     </a>
-                    <p class="nav-name">First Name Last Name</p>
+                    <p class="nav-name">{{ name }}</p>
                     <a class="nav-links" href="{% url 'home' %}">Home</a>
                     <a class="nav-links" href="{% url 'about' %}">About</a>
                     <button class="nav-links" type="button">Logout</button>
@@ -73,7 +73,8 @@
                     <button class="combo-image" type="button">Image</button>
                     <label class="food-name">{{ food.Food_Name }}</label>
                     <label class="food-price">{{ food.Price }}</label>
-                    <a class="combo-desc" href="{% url 'description' %}">View Description</a>
+                    <label class="food-calories">Calories: {{ food.Calories }}</label>
+                    <a class="combo-desc" href="{% url 'description' food.Food_ID %}">View Description</a>
                 </div>
                 {% endfor %}
             {% endif %}
@@ -84,11 +85,13 @@
                     <button class="combo-image" type="button">Image</button>
                     <label class="food-name">{{ drink.Food_Name }}</label>
                     <label class="food-price">{{ drink.Price }}</label>
+                    <label class="food-calories">Calories: {{ drink.Calories }}</label>
                     <a class="combo-desc" href="{% url 'description' drink.Food_ID %}">View Description</a>
                 </div>
                 {% endfor %}
             {% endif %}
             <h3 class="combo-subhead total">Total Price: Php {{ total_price }}</h3>
+            <h4 class="combo-subhead calories">Total Calories: Php {{ total_calories }}</h4>
             <button class="combo-cancel" type="button">CANCEL</button>
             </form>
         </div>

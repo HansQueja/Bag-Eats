@@ -147,3 +147,43 @@
     color: #13BAC0;
     font-size: 12px;
 }
+
+#messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.alert-error {
+    background-color: #e93b2e;
+}
+
+.alert .close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.2;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.alert .close:hover {
+    opacity: 0.5;
+}

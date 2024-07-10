@@ -6,7 +6,6 @@ def inputData():
 
     conn = sqlite3.connect('food.db') 
     cur = conn.cursor() 
-    print("here")
     cur.execute("SELECT * FROM food_list")
 
     result = cur.fetchall()
@@ -24,17 +23,39 @@ def inputData():
         food_item["Serving"] = row[5]
         food_item["Price"] = row[6]
         food_item["Rating"] = row[7]
-        food_time = row[8].split(',')
+        food_item["Nutritional_Rating"] = row[8]
+        food_item["Overall_Rating"] = row[9]
+        food_time = row[10].split(',')
         food_item["Food_Time"] = food_time
-        dietary_restrictions = row[9].split(',')
-        food_item["Dietary_Restriction"] = dietary_restrictions
-        allergen_avoidance = row[10].split(',')
-        food_item["Allergen_Avoidance"] = allergen_avoidance
-        nutritional_preference = row[11].split(',')
-        food_item["Nutritional_Preference"] = nutritional_preference
-        macronutrients = row[12].split(',')
-        food_item["Macronutrients"] = macronutrients
-        food_item["Food_Type"] = row[13]
+
+        try:
+            dietary_restrictions = row[11].split(',')
+            food_item["Dietary_Restriction"] = dietary_restrictions
+        except AttributeError:
+            food_item["Dietary_Restriction"] = row[11]
+            
+        try:
+            allergen_avoidance = row[12].split(',')
+            food_item["Allergen_Avoidance"] = allergen_avoidance
+        except AttributeError:
+            food_item["Allergen_Avoidance"] = row[12]
+
+        try:
+            nutritional_preference = row[13].split(',')
+            food_item["Nutritional_Preference"] = nutritional_preference
+        except AttributeError:
+            food_item["Nutritional_Preference"] = row[13]
+
+        try:
+            macronutrients = row[14].split(',')
+            food_item["Macronutrients"] = macronutrients
+        except AttributeError:
+            food_item["Macronutrients"] = row[14]
+
+        food_item["Food_Type"] = row[15]
+        food_item["Stall_ID"] = row[16]
+        food_item["Calories"] = row[17]
+        food_item["URL"] = row[18]
 
         food_list[row[0]] = food_item
 
@@ -44,33 +65,27 @@ def inputData():
 def filterData(food_list, max_budget, meal_type, dietary_restrictions, allergen_avoidance, nutritional_preference):
 
     valid_foods = []
-    value = []
-    weight = []
-    #print(food_list)
+    valid_drinks = []
+    
     for i in range(1, len(food_list) - 1):
-        #print("Check 1")
+        
         if food_list[i]["Price"] > int(max_budget):
-            continue
-        elif not meal_type in food_list[i]["Food_Time"]:
-            print("here meal type")
             continue
         
         invalid = False
-        #print("Check 2")
+        
         # check for dietary restrictions
         if dietary_restrictions != "none":
             for restrictions in dietary_restrictions:
-                print(restrictions)
                 if restrictions not in food_list[i]["Dietary_Restriction"]:
                     invalid = True
                     break
                 
         if invalid == True:
             continue
-        #print("Check 3")
+        
         # check for allergen avoidance
         if allergen_avoidance != "none":
-
             for allergen in allergen_avoidance:
                 if allergen not in food_list[i]["Allergen_Avoidance"]:
                     invalid = True
@@ -79,20 +94,36 @@ def filterData(food_list, max_budget, meal_type, dietary_restrictions, allergen_
         if invalid == True:
             continue
 
-        #print("Check 4")
         # check for nutritional preference
-
         if nutritional_preference != "none":
-
             for preference in nutritional_preference:
                 if preference in food_list[i]["Nutritional_Preference"]:
-                    food_list[i]["Rating"] += 2
-                    print(food_list[i]["Rating"])
+                    food_list[i]["Rating"] += 10
 
-        #print(food_list[i])
 
-        valid_foods.append(food_list[i]["Food_ID"])
-        value.append(food_list[i]["Rating"])
-        weight.append(food_list[i]["Price"])
+        if not meal_type in food_list[i]["Food_Time"]:
+            if food_list[i]["Food_Time"][0] == "Drinks":
+                valid_drinks.append(food_list[i])
+            continue
+
+        valid_foods.append(food_list[i])
     
-    return valid_foods, value, weight
+    return valid_foods, valid_drinks
+
+
+def extract(valid_list):
+    
+    filtered_id = []
+    weight = []
+    value = []
+    food_type = []
+    calories = []
+
+    for i in range(1, len(valid_list) - 1):
+        filtered_id.append(valid_list[i]["Food_ID"])
+        weight.append(valid_list[i]["Price"])
+        value.append(valid_list[i]["Overall_Rating"])
+        food_type.append(valid_list[i]["Food_Type"])
+        calories.append(valid_list[i]["Calories"])
+
+    return filtered_id, weight, value, food_type, calories

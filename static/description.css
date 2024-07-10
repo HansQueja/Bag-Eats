@@ -82,8 +82,35 @@
         border-radius: 5px;
         display: block;
         padding: 11px 16px 6px 16px;
-        margin-top: 50px;
+        margin-top: 20px;
         width: 100%;
+    }
+
+    .rate-form {
+        margin-top: 50px;
+    }
+
+    .rate-label {
+        color: white;
+        display: block;
+        text-align: center;
+        margin: 0 0 5px 0;
+    }
+
+    .submit-rate {
+        border-radius: 5px;
+        display: block;
+        padding: 11px 16px 6px 16px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        background: #13BAC0;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        background: #13BAC0;
     }
 }
 
@@ -172,6 +199,39 @@
         padding: 19px 32px 14px 32px;
         width: fit-content;
     }
+
+    .desc-form {
+        position: relative;
+    }
+
+    .rate-form {
+        margin-left: 68px;
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        width: 450px;
+    }
+
+    .rate-label {
+        color: white;
+        margin: 0 0 5px 0;
+    }
+
+    .submit-rate {
+        border-radius: 5px;
+        display: block;
+        padding: 11px 16px 6px 16px;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        background: #042526;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        background: #042526;
+    }
 }
 
 .desc-pic {
@@ -226,7 +286,8 @@
     font-weight: bolder;
 }
 
-.form-btn {
+.form-btn,
+.submit-rate {
     border: 1px white solid;
     background-color: #EBB346;
     color: white;
@@ -235,6 +296,59 @@
     text-decoration: none;
 }
 
-.form-btn:hover {
+.form-btn:hover,
+.submit-rate:hover {
     background-color: #BC9240;
+}
+
+input[type="range"] {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Custom height */
+    background: white; /* Track color */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Semi-transparent */
+    transition: opacity .15s ease-in-out; /* Transition for hover */
+    border-radius: 10px; /* Rounded edges for the track */
+}
+
+input[type="range"]:hover {
+    opacity: 1; /* Fully opaque on hover */
+}
+
+/* Thumb styling for Webkit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 30px; /* Custom width */
+    height: 15px; /* Custom height */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 10px; /* Rounded edges for the track */
+}
+
+/* Thumb styling for Mozilla (Firefox) */
+input[type="range"]::-moz-range-thumb {
+    width: 30px; /* Custom width */
+    height: 15px; /* Custom height */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 10px; /* Rounded edges for the track */
+}
+
+/* Track styling for Webkit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    cursor: pointer;
+    background: white; /* Track color */
+    border-radius: 10px; /* Rounded edges for the track */
+}
+
+/* Track styling for Mozilla (Firefox) */
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 15px;
+    cursor: pointer;
+    background: white; /* Track color */
+    border-radius: 10px; /* Rounded edges for the track */
 }

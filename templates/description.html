@@ -54,7 +54,7 @@
                 <a class="active nav-links" href="{% url 'home' %}">Home</a>
                 <a class="nav-links" href="{% url 'about' %}">About</a>
                 <button class="nav-links" type="button">Logout</button>
-                <a href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
+                <a class="profile" href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
                     <span class="profile-text nav-links">{{ name }}</span>
                     <img class="nav-profile" src="{% static 'images/no-profile.jpg' %}" alt="profile-pic">
                 </a>
@@ -117,8 +117,14 @@
                             {% endfor %}
                         </div>
                     </div>
-                    
-                    <a class="form-btn" href="{% url 'form' %}">BACK</a>
+                    <div class="desc-bottom">
+                        <div class="rate-form">
+                            <label class="manjari rate-label">Rate this food on a scale from 1-100</label>
+                            <input class="input-range" type="range" value="1" min="1" max="100" oninput="this.nextElementSibling.textContent = 'Submit ' + this.value + ' Rating'">
+                            <button class="manjari submit-rate" type="button"><output class="output manjari rate-output">Submit</output></button>
+                        </div>
+                        <a class="form-btn" href="{% url 'form' %}">Go Back</a>
+                    </div>
                 </div>
             </form>
         </div>

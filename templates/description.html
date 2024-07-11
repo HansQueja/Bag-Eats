@@ -84,8 +84,13 @@
                     </div>
                     <div class="desc-ratings d-flex">
                         <div>
+                            {% if food.Rating > 100 %}
+                            <h3 class="desc-rating manjari">100</h3>
+                            <p class="desc-rates manjari">General Rating</p>
+                            {% else %}
                             <h3 class="desc-rating manjari">{{ food.Rating }}</h3>
                             <p class="desc-rates manjari">General Rating</p>
+                            {% endif %}
                         </div>
                         <div>
                             <h3 class="desc-rating manjari">{{ food.Nutritional_Rating }}</h3>

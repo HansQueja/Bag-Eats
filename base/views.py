@@ -4,7 +4,7 @@ from django.contrib.sessions.backends.db import SessionStore
 from django.contrib import messages
 from django.shortcuts import redirect
 
-from base.read import inputData, filterData, extract
+from base.read import inputData, filterData, extract, calculate_maintenance_calories
 from base.knapsack import knapsack
 import sqlite3
 
@@ -27,8 +27,17 @@ def about(request):
 
 def profile(request):
     if 'user_id' in request.session:
-        name = request.session['name']
-        return render(request, 'profile.html', {"name":name})
+        context = {
+            'name': request.session.get('name'),
+            'email': request.session.get('email'),
+            'age': request.session.get('age'),
+            'height': request.session.get('height'),
+            'weight': request.session.get('weight'),
+            'bmi': request.session.get('bmi'),
+            'calorie': request.session.get('calories'),
+        }
+        print(context)
+        return render(request, 'profile.html', context)
     else:
         return redirect('login')
 
@@ -44,7 +53,7 @@ def login(request):
         cur.execute("SELECT * FROM users WHERE email = (?)", (email,))
         account = cur.fetchone()
 
-        if account and check_password(password, account[7]):
+        if account and check_password(password, account[8]):
             
             s = SessionStore()
             s['user_id'] = account[0]
@@ -53,14 +62,17 @@ def login(request):
             s['age'] = account[3]
             s['height'] = account[4]
             s['weight'] = account[5]
-        
+            s['bmi'] = account[6]
+            s['calories'] = round(account[7], 2)
             request.session = s
-            print(request.session)
             conn.close()
 
             return redirect('home')
         elif account:
             messages.error(request, "Your password is incorrect. Please check your credentials.")
+            return render(request, "login.html")
+        else:
+            messages.error(request, "You don't have an account yet. Please register an account!")
             return render(request, "login.html")
         
     return render(request, 'login.html')
@@ -114,9 +126,10 @@ def register(request):
         
         meter_height = int(height) / 100.0
         bmi = round(float(weight) / (meter_height * meter_height), 2)
+        calories = calculate_maintenance_calories(bmi,int(age),int(height))
 
-        cur.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (count + 1, full_name, email, 
-                                                                 age, height, weight, bmi, make_password(password1),))
+        cur.execute("INSERT INTO users VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (count + 1, full_name, email, 
+                                                                 age, height, weight, bmi, calories, make_password(password1),))
         
         conn.commit()
         conn.close()
@@ -130,61 +143,67 @@ def logout(request):
 
 def form(request):
 
-    if request.method == "POST":
-        
-        max_budget = int(request.POST.get('max-budget'))
-        meal_type = request.POST.get('meal-type')
-        dietary_restrictions = request.POST.getlist('dietary-restrictions')
+    if 'user_id' in request.session:
+        name = request.session['name']
 
-        if not dietary_restrictions:
-            dietary_restrictions = "none"
-
-        allergen_avoidance = request.POST.getlist('allergen-avoidance')
-
-        if not allergen_avoidance:
-            allergen_avoidance = "none"
-
-        nutritional_preference = request.POST.getlist('nutritional-preferences')
-
-        if not nutritional_preference:
-            nutritional_preference = "none"
-
-        drink_budget = 0
-        total_calories = 0
-        
-        if max_budget >= 70 and not meal_type in ("FruitDrinks","Beverages"):
-            drink_budget = 20
-            max_budget -= drink_budget
+        if request.method == "POST":
             
-        valid_foods, valid_drinks = filterData(food_list, max_budget, meal_type, dietary_restrictions, allergen_avoidance, nutritional_preference)
+            max_budget = int(request.POST.get('max-budget'))
+            meal_type = request.POST.get('meal-type')
+            dietary_restrictions = request.POST.getlist('dietary-restrictions')
 
-        filtered_id, weight, value, food_type, calories = extract(valid_foods)
+            if not dietary_restrictions:
+                dietary_restrictions = "none"
 
-        id_result, calories, total_price, spare_money = knapsack(int(max_budget), filtered_id, weight, value, food_type, calories, len(filtered_id))
-        drink_budget += spare_money
-        total_calories += calories
+            allergen_avoidance = request.POST.getlist('allergen-avoidance')
 
-        results_food = []
-        results_drinks = []
+            if not allergen_avoidance:
+                allergen_avoidance = "none"
 
-        for i in id_result:
-            if food_list[i]["Food_Type"] == "drinks":
-                results_drinks.append(food_list[i])
-            else:
-                results_food.append(food_list[i])
+            nutritional_preference = request.POST.getlist('nutritional-preferences')
 
-        if not meal_type in ("FruitDrinks","Beverages"):
-            filtered_id, weight, value, food_type, calories = extract(valid_drinks)
-            id_result, calories, total_price_drinks, spare_money = knapsack(int(drink_budget), filtered_id, weight, value, food_type, calories, len(filtered_id))
-            for i in id_result:
-                results_drinks.append(food_list[i])
+            if not nutritional_preference:
+                nutritional_preference = "none"
+
+            drink_budget = 0
+            total_calories = 0
             
+            if max_budget >= 70 and not meal_type in ("FruitDrinks","Beverages"):
+                drink_budget = 20
+                max_budget -= drink_budget
+                
+            valid_foods, valid_drinks = filterData(food_list, max_budget, meal_type, dietary_restrictions, allergen_avoidance, nutritional_preference)
+
+            filtered_id, weight, value, food_type, calories = extract(valid_foods)
+
+            id_result, calories, total_price, spare_money = knapsack(int(max_budget), filtered_id, weight, value, food_type, calories, len(filtered_id))
+            drink_budget += spare_money
             total_calories += calories
-            total_price += total_price_drinks
-        
-        return render(request, 'combination.html', {"foods": results_food, "drinks": results_drinks, "total_price": total_price, "total_calories": total_calories})
 
-    return render(request, 'form.html')
+            results_food = []
+            results_drinks = []
+
+            for i in id_result:
+                if food_list[i]["Food_Type"] == "drinks":
+                    results_drinks.append(food_list[i])
+                else:
+                    results_food.append(food_list[i])
+
+            if not meal_type in ("FruitDrinks","Beverages"):
+                filtered_id, weight, value, food_type, calories = extract(valid_drinks)
+                id_result, calories, total_price_drinks, spare_money = knapsack(int(drink_budget), filtered_id, weight, value, food_type, calories, len(filtered_id))
+                for i in id_result:
+                    results_drinks.append(food_list[i])
+                
+                total_calories += calories
+                total_price += total_price_drinks
+            
+            return render(request, 'combination.html', {"foods": results_food, "drinks": results_drinks, "total_price": total_price, "total_calories": total_calories, "name":name})
+
+        return render(request, 'form.html', {"name":name})
+    
+    else:
+        return redirect('login')
 
 def description(request, Food_ID):
     if 'user_id' in request.session:
@@ -199,7 +218,6 @@ def description(request, Food_ID):
 def moreinfo(request):
     if 'user_id' in request.session:
         name = request.session['name']
-
         return render(request, 'moreinfo.html', {"name":name})
     else:
         return redirect('login')

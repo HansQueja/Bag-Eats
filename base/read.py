@@ -127,3 +127,31 @@ def extract(valid_list):
         calories.append(valid_list[i]["Calories"])
 
     return filtered_id, weight, value, food_type, calories
+
+
+def calculate_maintenance_calories(bmi, age, height_cm=170):
+    """
+    Calculate maintenance calories based on BMI, age, and height.
+    
+    Args:
+    - bmi: Body Mass Index
+    - age: Age in years
+    - height_cm: Height in centimeters
+    
+    Returns:
+    - Maintenance calories
+    """
+    # Estimate weight based on BMI and height
+    height_m = height_cm / 100
+    weight_kg = bmi * (height_m ** 2)
+    
+    # Calculate BMR using the Mifflin-St Jeor Equation
+    bmr = 10 * weight_kg + 6.25 * height_cm - 5 * age + 5  # This is for men, for women, subtract 161 instead of adding 5
+    
+    # Default activity factor for 'light' activity level
+    activity_factor = 1.375
+    
+    # Calculate maintenance calories
+    maintenance_calories = bmr * activity_factor
+    
+    return maintenance_calories

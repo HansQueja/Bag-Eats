@@ -24,7 +24,10 @@
         display: block;
         margin: 20px auto;
     }
-    
+
+    .profile {
+        gap: none;
+    }
 }
 
 @media (min-width: 992px) { /* Desktop Navigation */
@@ -46,6 +49,10 @@
 
     .nav-links {
         color: white;
+    }
+
+    .profile {
+        gap: 30px;
     }
 }
 
@@ -119,4 +126,14 @@
 .active {
     color: #EBBA6B;
     font-weight: bold;
+}
+
+.nav-name {
+    font-weight: bold;
+}
+
+.profile {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
 }

@@ -31,7 +31,7 @@
                 <a class="nav-links" href="{% url 'home' %}">Home</a>
                 <a class="nav-links" href="{% url 'about' %}">About</a>
                 <button class="nav-links" type="button">Logout</button>
-                <a href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
+                <a class="profile" href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
                     <span class="profile-text nav-links">{{ name }}</span>
                     <img class="nav-profile" src="{% static 'images/no-profile.jpg' %}" alt="profile-pic">
                 </a>
@@ -87,12 +87,12 @@
                                         <input class="form-radio" type="radio" name="meal-type" value="Dinner" required>
                                         <label class="label-radio" for="meal-type">Dinner</label>
                                     </div>
-                                </div>
-                                <div class="form-dflex">
                                     <div class="d-flex">
                                         <input class="form-radio" type="radio" name="meal-type" value="Merienda" required>
                                         <label class="label-radio" for="meal-type">Merienda</label>
                                     </div>
+                                </div>
+                                <div class="form-dflex">
                                     <div class="d-flex">
                                         <input class="form-radio" type="radio" name="meal-type" value="CheatSnacks" required>
                                         <label class="label-radio" for="meal-type">Cheat Snacks</label> 

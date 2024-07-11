@@ -42,9 +42,9 @@ def knapsack(budget, item_id, weight, value, food_type, calorie, n):
             if current_food_type not in food_types or food_types[current_food_type] <= 2:
                 # increments the food type count
                 if current_food_type not in food_types:
-                    food_types["current_food_type"] = 1
+                    food_types[current_food_type] = 1
                 elif food_types[current_food_type] <= 2:
-                    food_types["current_food_type"] += 1
+                    food_types[current_food_type] += 1
 
                 # increment total calories
                 total_calories += calorie[row_counter - 1]

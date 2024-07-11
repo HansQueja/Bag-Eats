@@ -189,6 +189,7 @@
         color: #042526;
         margin: 0;
         padding: 25px;
+        width: 100%;
     }
 
     .desc-subhead {
@@ -310,7 +311,7 @@ input[type="range"] {
     background: white; /* Track color */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Semi-transparent */
-    transition: opacity .15s ease-in-out; /* Transition for hover */
+    transition: opacity .3s ease; /* Transition for hover */
     border-radius: 10px; /* Rounded edges for the track */
 }
 

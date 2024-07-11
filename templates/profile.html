@@ -54,7 +54,7 @@
                 <a class="active nav-links" href="{% url 'home' %}">Home</a>
                 <a class="nav-links" href="{% url 'about' %}">About</a>
                 <a class="nav-links" href="{% url 'logout' %}">Logout</a>
-                <a href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
+                <a class="profile" href="{% url 'profile' %}" target="_blank" rel="noopener noreferrer">
                     <span class="profile-text nav-links">{{ name }}</span>
                     <img class="nav-profile" src="{% static 'images/no-profile.jpg' %}" alt="profile-pic">
                 </a>

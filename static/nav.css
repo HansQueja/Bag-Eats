@@ -28,6 +28,10 @@
     .profile {
         gap: none;
     }
+
+    .footer {
+        display: none;
+    }
 }
 
 @media (min-width: 992px) { /* Desktop Navigation */
@@ -53,6 +57,15 @@
 
     .profile {
         gap: 30px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer i {
+        font-size: 20px;
     }
 }
 
@@ -136,4 +149,30 @@
     align-items: center;
     display: flex;
     text-decoration: none;
+}
+
+.footer {
+    margin: 30px auto 24px auto;
+    color: white;
+    font-family: 'Manjari', sans-serif;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.footer a {
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: #EBBA6B;
+    transition: all 0.3s ease;
 }

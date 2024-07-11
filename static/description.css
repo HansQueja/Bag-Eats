@@ -97,6 +97,10 @@
         margin: 0 0 5px 0;
     }
 
+    .rate-desktop {
+        display: none;
+    }
+
     .submit-rate {
         border-radius: 5px;
         display: block;
@@ -184,7 +188,7 @@
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.50);
         color: #042526;
         margin: 0;
-        padding: 25px 40px 25px 25px;
+        padding: 25px;
     }
 
     .desc-subhead {
@@ -200,21 +204,18 @@
         width: fit-content;
     }
 
-    .desc-form {
-        position: relative;
-    }
-
     .rate-form {
-        margin-left: 68px;
-        position: absolute;
-        left: 0;
-        bottom: -20px;
+        margin: 8px 0 0 0;
         width: 450px;
     }
 
     .rate-label {
         color: white;
         margin: 0 0 5px 0;
+    }
+
+    .rate-mobile {
+        display: none;
     }
 
     .submit-rate {

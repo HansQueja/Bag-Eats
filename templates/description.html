@@ -67,6 +67,11 @@
             <form class="desc-form">
                 <div class="desc-right">
                     <img class="desc-pic" src="{% static 'images/'|add:food.URL %}" alt="food-picture">
+                    <div class="rate-form rate-desktop">
+                        <label class="manjari rate-label">Rate this food on a scale from 1-100</label>
+                        <input class="input-range" type="range" value="1" min="1" max="100" oninput="this.nextElementSibling.textContent = 'Submit ' + this.value + ' Rating'">
+                        <button class="manjari submit-rate" type="button"><output class="output manjari rate-output">Submit</output></button>
+                    </div>
                 </div>
                 <div>
                     <p class="manjari desc-stall">{{ food.Stall_ID }} – {{ food.Stall_Name }}</p> <!-- 48–Triana's Eatery -->
@@ -118,7 +123,7 @@
                         </div>
                     </div>
                     <div class="desc-bottom">
-                        <div class="rate-form">
+                        <div class="rate-form rate-mobile">
                             <label class="manjari rate-label">Rate this food on a scale from 1-100</label>
                             <input class="input-range" type="range" value="1" min="1" max="100" oninput="this.nextElementSibling.textContent = 'Submit ' + this.value + ' Rating'">
                             <button class="manjari submit-rate" type="button"><output class="output manjari rate-output">Submit</output></button>

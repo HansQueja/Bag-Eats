@@ -102,7 +102,7 @@ def filterData(food_list, max_budget, meal_type, dietary_restrictions, allergen_
 
 
         if not meal_type in food_list[i]["Food_Time"]:
-            if food_list[i]["Food_Time"][0] == "Drinks":
+            if food_list[i]["Food_Time"][0] in ("FruitDrinks","Beverages"):
                 valid_drinks.append(food_list[i])
             continue
 

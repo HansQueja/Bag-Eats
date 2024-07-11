@@ -151,8 +151,8 @@ def form(request):
 
         drink_budget = 0
         total_calories = 0
-
-        if max_budget >= 70 and meal_type != "Drinks":
+        
+        if max_budget >= 70 and not meal_type in ("FruitDrinks","Beverages"):
             drink_budget = 20
             max_budget -= drink_budget
             
@@ -173,7 +173,7 @@ def form(request):
             else:
                 results_food.append(food_list[i])
 
-        if meal_type != "Drinks":
+        if not meal_type in ("FruitDrinks","Beverages"):
             filtered_id, weight, value, food_type, calories = extract(valid_drinks)
             id_result, calories, total_price_drinks, spare_money = knapsack(int(drink_budget), filtered_id, weight, value, food_type, calories, len(filtered_id))
             for i in id_result:

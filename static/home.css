@@ -106,10 +106,6 @@
         object-position: 100% 0%;
         width: 40%;
     }
-
-    .profile {
-        gap: 30px;
-    }
 }
 
 .home-title {
@@ -138,14 +134,4 @@
 .home-btn:hover {
     background-color: #EBBA6B;
     color: white;
-}
-
-.nav-name {
-    font-weight: bold;
-}
-
-.profile {
-    align-items: center;
-    display: flex;
-    text-decoration: none;
 }

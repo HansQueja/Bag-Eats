@@ -121,7 +121,9 @@
 .form-btn,
 .form-btn:hover,
 .combo-desc,
-.combo-desc:hover {
+.combo-desc:hover,
+.submit-rate,
+.submit-rate:hover {
     transition: all 0.3s ease;
 }
 
